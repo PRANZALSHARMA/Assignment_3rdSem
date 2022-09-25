@@ -30,7 +30,7 @@ class Node{
     }
 };
 
-//TO INSERT DATA AT END OF LINKED LIST
+//TO INSERT DATA
 void append(Node* &head,string name,int age){
     
     Node*temp=head;
@@ -48,32 +48,16 @@ void append(Node* &head,string name,int age){
     }
 }
 
-//TO INSERT DATA AT START OF LINKED LIST
-void insert_at_head(Node*&head,string name,int age){
-    
-    Node*new_node=new Node(name,age);
-    
-    new_node->next=head;
-    head->prev=new_node;
-    head=new_node;
-}
 
-//DIPLAY DATA FROM START OF LINKED LIST
+//DISPLAY DATA
 void display_from_start(Node*head){
     Node*temp=head;
     while(temp!=NULL){cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";temp=temp->next;}
     cout<<endl;
 }
 
-//DISPLAY DATA FROM END OF LINKED LIST
-void display_from_end(Node*head){
-    Node*temp=head;
-    while(temp->next!=NULL){temp=temp->next;}
-    while(temp!=NULL){cout<<"[Name:"<<temp->name<<" Age:"<<temp->age<<"]"<<"<=>";temp=temp->prev;}
-    cout<<endl;
-}
 
-//TO DELETE ANY INDEX EXCLUDING LAST ELEMEN
+//TO DELETE ANY INDEX EXCLUDING LAST ELEMENT
 void delete_ind(Node*&head,int i){
     if(i==0){
         Node*temp=head;
@@ -103,7 +87,8 @@ int main(){
     Node*head=NULL;
 	int no_of_family_mem;
     
-	cout<<"Enter Number Of Family Members:";cin>>no_of_family_mem;
+	cout<<"Enter Number Of Family Members:";
+	cin>>no_of_family_mem;
     
 	for(int i=1;i<=no_of_family_mem;i++){
 		string name;
@@ -116,7 +101,7 @@ int main(){
     cout<<endl;
     
     cout<<"Doubly Linked list with my family members as elements is shown below:"<<endl;
-    cout<<endl;
+    
     display_from_start(head);
 }
 
